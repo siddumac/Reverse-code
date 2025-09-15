@@ -1,0 +1,132 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: url("reverse.jpg") no-repeat center center;
+  background-size: 100% 100%;   /* Fit background fully */
+  background-attachment: fixed;
+  color: #eee;
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  top:0; left:0; right:0; bottom:0;
+  background: rgba(0,0,0,0.6);
+  z-index: -1;
+}
+
+.left, .right {
+  padding: 20px;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+.left {
+  width: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-right: 2px solid #444;
+  overflow-y: auto;
+  position: relative;
+}
+
+.right {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* 🔹 Main site header */
+.site-title {
+  font-size: 2.5em;
+  font-weight: bold;
+  text-align: center;
+  color: #00ffff;
+  text-shadow: 0 0 8px #00ffff, 0 0 15px #009999;
+  margin: 0 0 15px 0;
+  letter-spacing: 2px;
+}
+
+h1, h2 {
+  margin-top: 0;
+  font-size: 2em;
+  color: #00ffff;
+}
+
+.question-box {
+  background: rgba(20, 20, 20, 0.8);
+  border: 1px solid #00ffff;
+  border-radius: 8px;
+  padding: 15px;
+  margin-top: 10px;
+}
+
+.question-box h2 {
+  margin: 0 0 10px 0;
+  color: #00ffcc;
+}
+
+pre {
+  background-color: #111;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  overflow-x: auto;
+  white-space: pre-wrap;
+}
+
+textarea {
+  flex: 1;
+  background-color: #111;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  font-size: 1em;
+  font-family: 'Courier New', monospace;
+  resize: none;
+  border-radius: 6px;
+  margin-top: 10px;
+}
+
+button {
+  background-color: #00ffff;
+  color: #000;
+  border: none;
+  padding: 10px;
+  font-size: 1em;
+  cursor: pointer;
+  margin-top: 10px;
+  border-radius: 6px;
+}
+
+button:hover {
+  background-color: #00cccc;
+}
+
+select {
+  margin-bottom: 10px;
+  padding: 5px;
+  font-size: 1em;
+  background-color: #111;
+  color: #00ffff;
+  border: 1px solid #00ffff;
+  border-radius: 6px;
+}
+
+.error { 
+  color: #ff0099; 
+}
+
+.success { 
+  color: #00ff99; 
+}
+
+.next-btn, .prev-btn {
+  position: absolute;
+  bottom: 20px;
+}
+
+.prev-btn { left: 20px; }
+.next-btn { right: 20px; }

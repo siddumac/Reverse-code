@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DSA Practice</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="overlay"></div>
+
+  <!-- Left side (questions + navigation) -->
+  <div class="left">
+    <h1 class="site-title">REVERSE CODING</h1>
+    <h1 id="page-title">Loading...</h1>
+
+    <div class="question-box">
+      <h2>Problem Statement</h2>
+      <pre id="questions-list"></pre>
+    </div>
+
+    <button class="prev-btn" onclick="prevPage()">⬅</button>
+    <button class="next-btn" onclick="nextPage()">➡</button>
+  </div>
+
+  <!-- Right side (code editor + output) -->
+  <div class="right">
+    <select id="language-select">
+      <option value="python">Python</option>
+      <option value="cpp">C++</option>
+      <option value="c">C</option>
+      <option value="javascript">JavaScript</option>
+    </select>
+
+    <textarea id="editor"></textarea>
+    <button onclick="runCode()">Run Code</button>
+
+    <h2>Output</h2>
+    <pre id="output"></pre>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
