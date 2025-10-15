@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Shared Gallery</title>
+    <link rel="stylesheet" href="/app.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1 id="title">Shared Gallery</h1>
+      <div id="gallery" class="grid"></div>
+    </main>
+    <script>
+      async function load(){
+        const token = location.pathname.split('/').pop();
+        const res = await fetch('/api/share/' + token);
+        if(!res.ok){ document.getElementById('title').textContent = 'Invalid link'; return; }
+        const data = await res.json();
+        document.getElementById('title').textContent = data.user.name + "'s Gallery";
+        const g = document.getElementById('gallery');
+        g.innerHTML = '';
+        data.images.forEach(img => {
+          const card = document.createElement('div');
+          card.className = 'card';
+          const image = document.createElement('img');
+          image.src = `/uploads/${data.user.id}/${img.filename}`;
+          const row = document.createElement('div');
+          row.className = 'row';
+          const a = document.createElement('a');
+          a.href = image.src; a.textContent = 'Download'; a.download = img.original_name;
+          row.appendChild(a);
+          card.appendChild(image);
+          card.appendChild(row);
+          g.appendChild(card);
+        });
+      }
+      load();
+    </script>
+  </body>
+</html>
